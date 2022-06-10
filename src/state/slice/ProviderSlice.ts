@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type providerType ={
-    id:String,
-      name:String,
-      passport:String,
-      phone: String
+    id:string,
+      name:string,
+      passport:string,
+      phone: string
 }
 
 const initialState = [
@@ -23,8 +23,8 @@ const providerSlice = createSlice({
         createProvider(state, action){
             state.push(action.payload)
         },
-        getProvider(state, action){
-            state.push(action.payload)
+        gettingProvider(state, action){
+            return action.payload
         },
         deleteProvider(state, action){
             state.push(action.payload)
@@ -36,6 +36,6 @@ const providerSlice = createSlice({
     }
 })
 
-export const {createProvider, getProvider, deleteProvider, updateProvider} = providerSlice.actions
+export const {createProvider, gettingProvider, deleteProvider, updateProvider} = providerSlice.actions
 export default providerSlice.reducer
 export type {providerType}

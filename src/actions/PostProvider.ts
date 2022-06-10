@@ -1,6 +1,6 @@
 import {createProvider} from "../state/slice/ProviderSlice"
 
-const postProvider = async (providerName:String, phone:String, passport:String, dispatch:any)=>{
+const postProvider = async (providerName:string, phone:string, passport:string, dispatch:any)=>{
 
 const postBody ={
     name: providerName,
