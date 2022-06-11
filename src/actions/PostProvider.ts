@@ -1,4 +1,4 @@
-import {createProvider} from "../state/slice/ProviderSlice"
+import {createProvider} from "../state/slice/ProviderSlices"
 
 const postProvider = async (providerName:string, phone:string, passport:string, dispatch:any)=>{
 

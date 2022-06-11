@@ -7,6 +7,7 @@ type providerType ={
       phone: string
 }
 
+
 const initialState = [
     {
       id:'1a',
@@ -35,6 +36,8 @@ const providerSlice = createSlice({
 
     }
 })
+
+
 
 export const {createProvider, gettingProvider, deleteProvider} = providerSlice.actions
 export default providerSlice.reducer

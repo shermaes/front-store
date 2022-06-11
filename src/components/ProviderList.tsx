@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import deletingProvider from '../actions/DeleteProvider'
 import getProvider from '../actions/GetProvider'
-import { deleteProvider, gettingProvider, providerType } from '../state/slice/ProviderSlice'
+import { deleteProvider, gettingProvider, providerType } from '../state/slice/ProviderSlices'
 import store from '../state/Store'
 
+//here I create the list to show the providers in my database
 const ProviderList = () => {
 
 const dispatch = useDispatch()
@@ -34,9 +35,13 @@ const providerBeingDeleted =async (id:string) => {
         <h2>Raul's providers</h2>
         <ul>
             {providerSavedInStore.map((provider:providerType)=>
-            <li key={provider.id}>{provider.name}
+            <tr key={provider.id}>
+                <td> Provider: {provider.name}</td>
+                <br />
+                <td> Phone: {provider.phone}</td>
+                <td> Passport: {provider.passport}</td>
             <button onClick={()=>{providerBeingDeleted(`${provider.id}`)}}>X</button>
-            </li>)}
+            </tr>)}
         </ul>
         </div>
   )

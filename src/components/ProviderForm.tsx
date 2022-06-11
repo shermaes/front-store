@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import postProvider from "../actions/PostProvider"
 
-
+//Here I have the form where I'll get the info for the providers
 const ProviderForm = () =>{
 
     const dispatch = useDispatch()
