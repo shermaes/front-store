@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import deletingProduct from '../actions/DeleteProduct'
 import getProducts from '../actions/GetProduct'
-import { gettingProduct } from '../state/slice/ProductSlice'
+import { deleteProduct, gettingProduct } from '../state/slice/ProductSlice'
 import store from '../state/Store'
 //here I create the list to show my products
 const ProductList = () => {
@@ -18,6 +19,14 @@ const ProductList = () => {
         )
         },[])
 
+const productBeingDeleted = async (id:string) => {
+    const response = await deletingProduct(id)
+    if(response.productGone){
+        dispatch(deleteProduct(id))
+    }
+}
+
+
   return (
     <div>
         <h1>What you can get from Raul's Store</h1>
@@ -31,6 +40,7 @@ const ProductList = () => {
             <td>{product.price}</td>
             <td>{product.maximum}</td>
             <td>{product.minimum}</td>
+            <button onClick={()=>{productBeingDeleted(`${product.id}`)}}>X</button>
             </tr>
             
             )}

@@ -8,9 +8,9 @@ function PrivateRoutes() {
         <div>
             <tr><Link to='/'>Add a new Provider</Link></tr>
             
-            <tr><Link to='/providers'>Providers</Link></tr>
+            <tr><Link to='/providers'>Show Providers</Link></tr>
 
-           <tr><Link to ='/products'>Products</Link></tr> 
+           <tr><Link to ='/products'>Show Products</Link></tr> 
 
             <Routes>
             <Route path="/" element={<ProviderForm/>}></Route>
