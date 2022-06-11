@@ -18,7 +18,7 @@ export const Container = styled.div`
     justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
-    /* background: red; */
+    
 `
    
 export const Column = styled.div`
@@ -39,3 +39,4 @@ export const Row = styled.div`
                            minmax(200px, 1fr));
   }
 `;
+

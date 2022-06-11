@@ -27,15 +27,15 @@ const providerSlice = createSlice({
             return action.payload
         },
         deleteProvider(state, action){
-            state.push(action.payload)
-        },
-        updateProvider(state, action){
-            state.push(action.payload)    
+            //here I create a new state and filter the id deleted, the id I erased is the action payload
+        let newState = state.filter((provider) => provider.id != action.payload)
+        // I return this to update the store
+      return newState
         }
 
     }
 })
 
-export const {createProvider, gettingProvider, deleteProvider, updateProvider} = providerSlice.actions
+export const {createProvider, gettingProvider, deleteProvider} = providerSlice.actions
 export default providerSlice.reducer
 export type {providerType}
