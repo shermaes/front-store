@@ -20,6 +20,7 @@ const useForm = (e:React.FormEvent<HTMLButtonElement>) =>{
 
 return (
     <form>
+        <h2>Adding a new Provider</h2>
         <label htmlFor="providerName">Provider name:</label>
         <input type="text" name="providerName"
         value={providerName} onChange={(e)=> setProviderName(e.target.value)}/> 

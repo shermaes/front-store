@@ -29,7 +29,7 @@ const productBeingDeleted = async (id:string) => {
 
   return (
     <div>
-        <h1>What you can get from Raul's Store</h1>
+        <h2>What you can get from Raul's Store</h2>
         <ul>
             {productSavedInStore.map((product)=>
             <tr key={product.id}>
