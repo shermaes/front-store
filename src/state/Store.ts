@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import BillsReducer, { billType } from "./slice/BillsSlice";
 import LoggedReducer from "./slice/LoggedSlice";
 import ProductReducer, { productType } from "./slice/ProductSlice";
 import providerReducer, {providerType} from "./slice/ProviderSlices"
 import ReceiptReducer, { receiptType } from "./slice/ReceiptSlice";
-import SaleReducer from "./slice/SaleSlice";
-
-
 
 const store = configureStore(
     {
@@ -14,7 +12,7 @@ const store = configureStore(
         product: ProductReducer,
         receipt:ReceiptReducer,
         logged: LoggedReducer,
-        sale: SaleReducer
+        bill: BillsReducer
         }
     }
 )
@@ -23,6 +21,7 @@ type store = {
     provider: providerType[]
     product: productType[]
     receipt: receiptType[]
+    bill: billType[]
 }
 
 type stateType = ReturnType<typeof store.getState>
