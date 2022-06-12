@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import LogIn from "../components/LogInComponents/LogIn";
 import ProductForm from "../components/ProductForm";
 import ProductList from "../components/ProductList";
 import ProviderForm from "../components/ProviderForm";
@@ -9,6 +10,7 @@ import ReceiptList from "../components/ReceiptList";
 function PrivateRoutes() {
     return(
         <div>
+            <tr><Link to="/logIn">Log in</Link></tr>
             
             <tr><Link to='/'>Add a new Provider</Link></tr>
             
@@ -29,6 +31,7 @@ function PrivateRoutes() {
             <Route path="/addingProvider" element={<ProductForm/>}></Route>
             <Route path="/receipts" element={<ReceiptList/>}></Route>
             <Route path="/addingReceipts" element={<ReceiptForm/>}></Route>
+            <Route path="logIn" element={<LogIn />}/>
             </Routes>
         </div>
     )

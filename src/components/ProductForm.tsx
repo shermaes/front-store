@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import getProvider from '../actions/GetProvider'
 import postProduct from '../actions/PostProduct'
 import  { gettingProvider, providerType} from '../state/slice/ProviderSlices'
-import store from '../state/Store'
+import  store from '../state/Store'
 
 const ProductForm = () => {
 

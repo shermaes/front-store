@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import deletingProduct from '../actions/DeleteProduct'
 import getProducts from '../actions/GetProduct'
 import { deleteProduct, gettingProduct } from '../state/slice/ProductSlice'
-import store from '../state/Store'
+import  store from '../state/Store'
 //here I create the list to show my products
 const ProductList = () => {
 
