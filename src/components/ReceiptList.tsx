@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import getReceipt from '../actions/GetReceipt'
-import { gettingReceipt, receiptType } from '../state/slice/ReceiptSlice'
+import { gettingReceipt} from '../state/slice/ReceiptSlice'
 import store from '../state/Store'
 
 const ReceiptList = () => {
@@ -25,7 +25,7 @@ const ReceiptList = () => {
          {receiptsSavedInStore.map((receipt)=>
             <tr key={receipt.id}>
                 <td>Date: {receipt.date}</td>
-                <td> Product ID: {receipt.product.id}</td>
+                <td> Product ID: {receipt.id_product}</td>
                 <td> Provider: {receipt.provider.name}</td>
                 <td>Quantity: {receipt.quantity}</td>
             </tr>)}

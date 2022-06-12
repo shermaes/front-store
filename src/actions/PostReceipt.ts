@@ -2,7 +2,7 @@ import { productType } from "../state/slice/ProductSlice"
 import { providerType } from "../state/slice/ProviderSlices"
 import { createReceipt } from "../state/slice/ReceiptSlice"
 
-const postReceipt = async (provider: providerType, id_product: productType, date: string, quantity: number, dispatch:any )=>{
+const postReceipt = async (provider: providerType, id_product: string, date: string, quantity: number, dispatch:any )=>{
 
     const postBody={
         provider: provider,

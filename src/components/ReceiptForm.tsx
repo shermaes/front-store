@@ -12,15 +12,16 @@ const ReceiptForm = () => {
     const dispatch = useDispatch()
     const[provider, setProvider]=useState({} as providerType) 
     const[quantity, setQuantity]=useState<number>(0)
-    const[product, setProduct]=useState({} as productType) 
+    const[id_product, setProductID]=useState('')
     const[date, setDate]=useState('')
 
 
     const useForm =(e:React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        postReceipt(provider, product, date, quantity, dispatch)
+        postReceipt(provider, id_product, date, quantity, dispatch)
         setQuantity(0)
         setDate("")
+        setProductID("")
 }
 //this part here is the logic for my dropdown when choosing a provider
 const providers = useSelector((state:store)=>state.provider)
@@ -35,21 +36,6 @@ useEffect(()=>{
         }
     )
     },[])
-    //this part will create a dropdown for the product id
-    const products = useSelector((state:store)=>state.product)
-    const handleProduct= (e:React.SyntheticEvent<HTMLSelectElement, Event>) =>{
-        const idk2 = products.find(item=> item.id==e.currentTarget.value)
-        console.log(idk2)
-        
-    setProduct(idk2 as productType)
-    }
-    useEffect(()=>{
-        getProducts().then(
-            (product)=>{
-                dispatch(gettingProduct(product))
-            }
-        )
-        },[])
 
 
   return (
@@ -64,13 +50,10 @@ useEffect(()=>{
   ))}
     </select>
 
-    <label htmlFor="id_product">Product ID:</label>
-    <select
-  id="disabledSelect" onSelect={(e)=>{handleProduct}}>
-    {providers.map((product)=>(
-    <option key={product.id}>{product.id}</option>
-  ))}
-    </select>
+    <label htmlFor="productID">Product ID:</label>
+    <input type="text" name="productID"
+    value={id_product} onChange={(e)=> setProductID(e.target.value)}/> 
+    <br />
 
     <label htmlFor="quantity">Quantity:</label>
     <input type="number" name="quantity"

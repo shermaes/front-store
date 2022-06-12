@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { productType } from "./ProductSlice"
 import { providerType } from "./ProviderSlices"
 
 type receiptType ={
     id:string,
     provider: providerType,
-    product: productType,
+    id_product: string,
     date: string,
     quantity: number
 }
@@ -14,7 +13,7 @@ const initialState = [
     {
     id:'56464o',
     provider: 'Angel',
-    product: '364987uuj',
+    id_product: '364987uuj',
     date: '02/07/99',
     quantity: 5  
     }
