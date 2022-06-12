@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import GoogleLoginForm from "../components/LogInComponents/GoogleLoginForm";
 import LogIn from "../components/LogInComponents/LogIn";
 import SignIn from "../components/LogInComponents/SigIn";
+import WelcomePage from "../components/LogInComponents/WelcomePage";
 import ProductForm from "../components/ProductForm";
 import ProductList from "../components/ProductList";
 import ProviderForm from "../components/ProviderForm";
@@ -30,6 +31,7 @@ function PrivateRoutes() {
         <Link to ='/receipts' className="nav-item nav-link active">Show Receipts</Link> 
 
         <Link to ='/addingReceipts' className="nav-item nav-link active">Add a new Receipt</Link>
+
 </nav>
             
 
@@ -43,6 +45,7 @@ function PrivateRoutes() {
             <Route path="logIn" element={<LogIn />}></Route>
             <Route path="signIn" element={<SignIn/>}></Route>
             <Route path="logInGoogle" element={<GoogleLoginForm/>}></Route>
+            <Route path="/welcome" element={<WelcomePage/>}></Route>
             </Routes>
         </div>
     )

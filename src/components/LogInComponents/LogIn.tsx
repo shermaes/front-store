@@ -33,7 +33,7 @@ const LogIn: React.FunctionComponent = () => {
   
     return(
       <div>
-        <h1>Log In</h1>
+        <h2>Log In</h2>
         <form>
           <label htmlFor="username">Username</label><br />
           <input 

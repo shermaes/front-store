@@ -6,13 +6,6 @@
   align-items: center;
 }
 
-.footer{
-  background-color: rgb(8, 96, 55);
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .main_content{
   height: 80vh;
 }

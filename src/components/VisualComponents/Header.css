@@ -1,0 +1,15 @@
+.Header{
+    display:grid;
+    grid-template-areas:"logo nav";
+   }
+
+   img {
+    max-width: 2000px;
+    max-height: 200px;
+   }
+
+   h1{
+    max-width: 20000px;
+    max-height: 20px;
+    font: 90px sans-serif;
+   }

@@ -30,7 +30,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <h1>Sign In</h1>
+      <h2>Sign In</h2>
       <form>
         <label htmlFor="username">Username</label><br />
         <input 
