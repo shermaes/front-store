@@ -25,7 +25,7 @@ const ReceiptList = () => {
          {receiptsSavedInStore.map((receipt)=>
             <tr key={receipt.id}>
                 <td>Date: {receipt.date}</td>
-                <td> Product ID: {receipt.id_product}</td>
+                <td> Product ID: {receipt.product.id}</td>
                 <td> Provider: {receipt.provider.name}</td>
                 <td>Quantity: {receipt.quantity}</td>
             </tr>)}
