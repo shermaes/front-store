@@ -35,7 +35,7 @@ const productBeingDeleted = async (id:string) => {
             <tr key={product.id}>
             <td >{product.name_product}</td>
             <td>{product.description}</td>
-            <td>{product.provider.name}</td>
+            <td>{product.provider}</td>
             <td>{product.units_available}</td>
             <td>{product.price}</td>
             <td>{product.maximum}</td>

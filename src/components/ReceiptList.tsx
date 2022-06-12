@@ -26,7 +26,7 @@ const ReceiptList = () => {
             <tr key={receipt.id}>
                 <td>Date: {receipt.date}</td>
                 <td> Product ID: {receipt.id_product}</td>
-                <td> Provider: {receipt.provider.name}</td>
+                <td> Provider: {receipt.provider}</td>
                 <td>Quantity: {receipt.quantity}</td>
             </tr>)}
             </ul>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import getProducts from '../actions/GetProduct'
 import getProvider from '../actions/GetProvider'
 import postReceipt from '../actions/PostReceipt'
-import { gettingProduct, productType } from '../state/slice/ProductSlice'
 import { gettingProvider, providerType } from '../state/slice/ProviderSlices'
 import store from '../state/Store'
+import Select from 'react-select'
+import getProducts from '../actions/GetProduct'
+import { gettingProduct } from '../state/slice/ProductSlice'
 
 const ReceiptForm = () => {
 
@@ -25,10 +26,12 @@ const ReceiptForm = () => {
 }
 //this part here is the logic for my dropdown when choosing a provider
 const providers = useSelector((state:store)=>state.provider)
-const handleProvider= (e:React.SyntheticEvent<HTMLSelectElement, Event>) =>{
-    const idk = providers.find(item=> item.name==e.currentTarget.value)
-setProvider(idk as providerType)
-}
+
+const handleProvider= (e:any) =>{
+  setProvider(e.label)
+  setProvider(e.value)
+  }
+
 useEffect(()=>{
     getProvider().then(
         (provider)=>{
@@ -36,7 +39,20 @@ useEffect(()=>{
         }
     )
     },[])
+//and this part will handle the dropdown for the productID
+const products = useSelector((state:store)=>state.product)
+const handleProduct= (e:any) =>{
+  setProductID(e.label)
+  setProductID(e.value)
+  }
 
+  useEffect(()=>{
+    getProducts().then(
+        (product)=>{
+            dispatch(gettingProduct(product))
+        }
+    )
+    },[])
 
   return (
     <form className="form-inline">
@@ -45,17 +61,11 @@ useEffect(()=>{
 
         <div className="col-sm-10">
     <label htmlFor="provider">Provider:</label>
-    <select
-  id="disabledSelect" onSelect={(e)=>{ handleProvider}} className="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" >
-    {providers.map((provider)=>(
-    <option value={provider.name} key={provider.id}>{provider.name}</option>
-  ))}
-    </select>
+    <Select  options={providers.map(provs => ({label:provs.name, value:provs.name}))} onChange={(ev)=>handleProvider(ev)}/>
     </div>
     <div className="col-sm-10">
     <label htmlFor="productID">Product ID:</label>
-    <input type="text" name="productID"
-    value={id_product} onChange={(e)=> setProductID(e.target.value)} className="form-control" placeholder="EX: 1A"/> 
+    <Select  options={products.map(prods => ({label:prods.id, value:prods.id}))} onChange={(ev)=>handleProduct(ev)}/> 
     </div>
 
     <div className="col-sm-10">

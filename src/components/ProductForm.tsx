@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import getProvider from '../actions/GetProvider'
 import postProduct from '../actions/PostProduct'
-import  { gettingProvider, providerType} from '../state/slice/ProviderSlices'
+import  {gettingProvider, providerType} from '../state/slice/ProviderSlices'
 import  store from '../state/Store'
+import Select from 'react-select'
+
 
 const ProductForm = () => {
 
     const dispatch = useDispatch()
-    const[provider, setProvider]=useState({} as providerType) 
+    const[provider, setProvider]=useState('')
     const[minimum, setMinimum]=useState<number>(0)
     const[maximum, setMaximum]=useState<number>(0)
     const[name_product, setName_product]=useState('')
@@ -29,9 +31,9 @@ const useForm =(e:React.FormEvent<HTMLButtonElement>) => {
 
 const providers = useSelector((state:store)=>state.provider)
 
-const handleProvider= (e:React.SyntheticEvent<HTMLSelectElement, Event>) =>{
-    const idk = providers.find(item=> item.name==e.currentTarget.value)
-setProvider(idk as providerType)
+const handleProvider= (e:any) =>{
+setProvider(e.label)
+setProvider(e.value)
 }
 
 useEffect(()=>{
@@ -50,10 +52,7 @@ useEffect(()=>{
           
      <div className="col-sm-10">
     <label htmlFor="provider">Provider:</label>
-    <select id="disabledSelect" className="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" onSelect={(e)=>{ handleProvider}}> {providers.map((provider)=>(
-    <option value={provider.name} key={provider.id}>{provider.name}</option>
-  ))} 
-    </select>
+    <Select  options={providers.map(provs => ({label:provs.name, value:provs.name}))} onChange={(ev)=>handleProvider(ev)}/>
     </div>
     <div className="col-sm-10">
     <label htmlFor="name_product">Product name:</label>

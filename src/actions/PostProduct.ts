@@ -1,7 +1,7 @@
 import { createProduct } from "../state/slice/ProductSlice"
 import { providerType } from "../state/slice/ProviderSlices"
 
-const postProduct = async (provider: providerType, minimum: number, maximum: number, name_product: string, description:string, units_available: number, price: number, dispatch:any )=>{
+const postProduct = async (provider: string, minimum: number, maximum: number, name_product: string, description:string, units_available: number, price: number, dispatch:any )=>{
 
 const postBody={
     provider: provider,

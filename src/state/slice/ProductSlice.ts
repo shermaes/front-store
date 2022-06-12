@@ -3,7 +3,7 @@ import { providerType } from "./ProviderSlices";
 
 type productType={
     id:string,
-    provider: providerType,
+    provider: string,
     minimum: number,
     maximum: number,
     name_product: string,

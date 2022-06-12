@@ -3,6 +3,7 @@ import LoggedReducer from "./slice/LoggedSlice";
 import ProductReducer, { productType } from "./slice/ProductSlice";
 import providerReducer, {providerType} from "./slice/ProviderSlices"
 import ReceiptReducer, { receiptType } from "./slice/ReceiptSlice";
+import SaleReducer from "./slice/SaleSlice";
 
 
 
@@ -13,6 +14,7 @@ const store = configureStore(
         product: ProductReducer,
         receipt:ReceiptReducer,
         logged: LoggedReducer,
+        sale: SaleReducer
         }
     }
 )

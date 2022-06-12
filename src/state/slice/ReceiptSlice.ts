@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { providerType } from "./ProviderSlices"
 
 type receiptType ={
     id:string,
-    provider: providerType,
+    provider: string,
     id_product: string,
     date: string,
     quantity: number
