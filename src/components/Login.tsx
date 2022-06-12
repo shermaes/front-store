@@ -15,7 +15,6 @@ const Login = () => {
     {user!==null?
     <nav>
       <Link to="/logInGoogle">Log in with google</Link>
-      <Link to="/logIn">Log in</Link>
       <Link to="/SignIn">Sign in</Link>
       <Link to="/welcome">Welcome</Link>
     </nav>:
