@@ -1,5 +1,5 @@
 const deletingProduct = async(id:string) => {
-    const response  = await fetch(`http://localhost:8081/api/delete/product/${id}`, {
+    const response  = await fetch(`https://rauls-store.herokuapp.com/api/delete/product/${id}`, {
         method: 'DELETE'
         
     })

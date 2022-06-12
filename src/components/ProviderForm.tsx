@@ -27,7 +27,7 @@ return (
         <div className="col-sm-10">
         <label htmlFor="providerName">Provider name:</label>
         <input type="text" name="providerName"
-        value={providerName} onChange={(e)=> setProviderName(e.target.value)}  className="form-control" placeholder="EX: Screw #4"/> 
+        value={providerName} onChange={(e)=> setProviderName(e.target.value)}  className="form-control" placeholder="EX: HappyScrew"/> 
         </div>
 
         <div className="col-sm-10">

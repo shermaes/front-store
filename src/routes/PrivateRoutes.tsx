@@ -14,6 +14,7 @@ function PrivateRoutes() {
     return(
         <div>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    
         <Link to="/logIn" className="nav-item nav-link active" >Log in</Link>
 
         <Link to="/logInGoogle" className="nav-item nav-link active">Log in with google</Link>

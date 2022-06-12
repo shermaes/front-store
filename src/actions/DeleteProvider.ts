@@ -3,7 +3,7 @@
 
 //Here's where I enter the route to work with my data base
 const deletingProvider = async (id: string)=> {
-    const response  = await fetch(`http://localhost:8081/api/delete/provider/${id}`, {
+    const response  = await fetch(`https://rauls-store.herokuapp.com/api/delete/provider/${id}`, {
         method: 'DELETE'
         
     })

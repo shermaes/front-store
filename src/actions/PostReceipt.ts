@@ -11,7 +11,7 @@ const postReceipt = async (provider: providerType, id_product: string, date: str
         quantity: quantity 
     }
     
-    let postRequest = await fetch('http://localhost:8081/api/create/receipt',
+    let postRequest = await fetch('https://rauls-store.herokuapp.com/api/create/receipt',
     {
         method: 'POST',
         headers: {'content-type':'application/json'},

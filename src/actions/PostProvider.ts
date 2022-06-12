@@ -8,7 +8,7 @@ const postBody ={
     phone: phone
 }
 
-let postRequest = await fetch('http://localhost:8081/api/create/provider',
+let postRequest = await fetch('https://rauls-store.herokuapp.com/api/create/provider',
 {
     method: 'POST',
     headers: {'content-type':'application/json'},

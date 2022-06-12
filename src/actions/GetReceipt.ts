@@ -1,6 +1,6 @@
 const getReceipt = async () =>{
 
-    let getRequest = await fetch('http://localhost:8081/api/get/receipts')
+    let getRequest = await fetch('https://rauls-store.herokuapp.com/api/get/receipts')
 
     let data = await getRequest.json()
 

@@ -1,6 +1,6 @@
 const getProvider = async () =>{
 
-    let getRequest = await fetch('http://localhost:8081/api/get/providers')
+    let getRequest = await fetch('https://rauls-store.herokuapp.com/api/get/providers')
 
     let data = await getRequest.json()
 

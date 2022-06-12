@@ -64,8 +64,8 @@ const handleProduct= (e:any) =>{
     <Select  options={providers.map(provs => ({label:provs.name, value:provs.name}))} onChange={(ev)=>handleProvider(ev)}/>
     </div>
     <div className="col-sm-10">
-    <label htmlFor="productID">Product ID:</label>
-    <Select  options={products.map(prods => ({label:prods.id, value:prods.id}))} onChange={(ev)=>handleProduct(ev)}/> 
+    <label htmlFor="productID">Product Name:</label>
+    <Select  options={products.map(prods => ({label:prods.name_product, value:prods.name_product}))} onChange={(ev)=>handleProduct(ev)}/> 
     </div>
 
     <div className="col-sm-10">

@@ -13,7 +13,7 @@ const postBody={
     price: price  
 }
 
-let postRequest = await fetch('http://localhost:8081/api/create/product',
+let postRequest = await fetch('https://rauls-store.herokuapp.com/api/create/product',
 {
     method: 'POST',
     headers: {'content-type':'application/json'},
