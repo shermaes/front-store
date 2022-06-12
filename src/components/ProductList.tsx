@@ -33,14 +33,14 @@ const productBeingDeleted = async (id:string) => {
         <ul>
             {productSavedInStore.map((product)=>
             <tr key={product.id}>
-            <td>{product.name_product}</td>
+            <td >{product.name_product}</td>
             <td>{product.description}</td>
             <td>{product.provider.name}</td>
             <td>{product.units_available}</td>
             <td>{product.price}</td>
             <td>{product.maximum}</td>
             <td>{product.minimum}</td>
-            <button onClick={()=>{productBeingDeleted(`${product.id}`)}}>X</button>
+            <button onClick={()=>{productBeingDeleted(`${product.id}`)}}  className="btn btn-outline-success">X</button>
             </tr>
             
             )}

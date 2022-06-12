@@ -49,7 +49,7 @@ const LogIn: React.FunctionComponent = () => {
             name="password"
             value={password}
           /><br />
-          <button onClick={(e) => logInForm(e)}>Log In</button><br />
+          <button onClick={(e) => logInForm(e)}  className="btn btn-outline-success">Log In</button><br />
         </form>
       </div>
     ) ;

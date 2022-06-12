@@ -22,9 +22,7 @@ const SignIn = () => {
           const errorMessage = error.message;
           console.log('*** sign in error ***');
           console.log(errorMessage);
-          // ..
         });
-
         setUserName('')
         setPassword('')
     }
@@ -48,7 +46,7 @@ const SignIn = () => {
           name="password"
           value={password}
           /><br />
-        <button onClick={(e) => signInForm(e)}>Sign in</button><br />
+        <button onClick={(e) => signInForm(e)}  className="btn btn-outline-success" >Sign in</button><br />
       </form>
     </div>
   )

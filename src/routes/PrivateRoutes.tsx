@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import GoogleLoginForm from "../components/LogInComponents/GoogleLoginForm";
 import LogIn from "../components/LogInComponents/LogIn";
 import SignIn from "../components/LogInComponents/SigIn";
 import ProductForm from "../components/ProductForm";
@@ -11,21 +12,26 @@ import ReceiptList from "../components/ReceiptList";
 function PrivateRoutes() {
     return(
         <div>
-            <tr><Link to="/logIn">Log in</Link></tr>
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Link to="/logIn" className="nav-item nav-link active" >Log in</Link>
 
-            <tr><Link to="/signIn">Sign in</Link></tr>
-            
-            <tr><Link to='/'>Add a new Provider</Link></tr>
-            
-            <tr><Link to='/providers'>Show Providers</Link></tr>
+        <Link to="/logInGoogle" className="nav-item nav-link active">Log in with google</Link>
 
-           <tr><Link to ='/products'>Show Products</Link></tr> 
+        <Link to="/signIn" className="nav-item nav-link active">Sign in</Link>
+            
+        <Link to='/' className="nav-item nav-link active">Add a new Provider</Link>
+            
+        <Link to='/providers' className="nav-item nav-link active">Show Providers</Link>
+
+        <Link to ='/products' className="nav-item nav-link active">Show Products</Link>
            
-           <tr><Link to ='/addingProvider'>Add a new Product</Link></tr>
+        <Link to ='/addingProvider' className="nav-item nav-link active">Add a new Product</Link>
 
-           <tr><Link to ='/receipts'>Show Receipts</Link></tr> 
+        <Link to ='/receipts' className="nav-item nav-link active">Show Receipts</Link> 
 
-           <tr><Link to ='/addingReceipts'>Add a new Receipt</Link></tr>
+        <Link to ='/addingReceipts' className="nav-item nav-link active">Add a new Receipt</Link>
+</nav>
+            
 
             <Routes>
             <Route path="/" element={<ProviderForm/>}></Route>
@@ -36,6 +42,7 @@ function PrivateRoutes() {
             <Route path="/addingReceipts" element={<ReceiptForm/>}></Route>
             <Route path="logIn" element={<LogIn />}></Route>
             <Route path="signIn" element={<SignIn/>}></Route>
+            <Route path="logInGoogle" element={<GoogleLoginForm/>}></Route>
             </Routes>
         </div>
     )

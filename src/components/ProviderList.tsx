@@ -40,7 +40,7 @@ const providerBeingDeleted =async (id:string) => {
                 <br />
                 <td> Phone: {provider.phone}</td>
                 <td> Passport: {provider.passport}</td>
-            <button onClick={()=>{providerBeingDeleted(`${provider.id}`)}}>X</button>
+            <button onClick={()=>{providerBeingDeleted(`${provider.id}`)}}  className="btn btn-outline-success">X</button>
             </tr>)}
         </ul>
         </div>

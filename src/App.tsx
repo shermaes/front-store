@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import Footer from './components/Footer'
 import PrivateRoutes from './routes/PrivateRoutes'
 
 
@@ -14,7 +13,6 @@ function App() {
       <BrowserRouter>
       <PrivateRoutes/>
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }
