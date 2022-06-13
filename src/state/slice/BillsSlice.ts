@@ -4,10 +4,10 @@ type billType={
     id:string,
     date: string,
     client_name:string,
-    clerk: string,
-    productSold: string,
     quantity: number,
-    totalPaid: number  
+    clerk: string,
+    productsSold: string,
+    total_paid: number  
   }
 
   const initialState = [
@@ -15,10 +15,10 @@ type billType={
       id:'string',
       date: 'string',
       client_name:'string',
-      clerk: 'string',
-      productSold: 'string',
       quantity:0,
-      totalPaid: 0  
+      clerk: 'string',
+      productsSold: 'string',
+      total_paid: 0  
     }
   ]
 

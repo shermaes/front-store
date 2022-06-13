@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import BillForm from "../components/BillForm";
 import BillList from "../components/BillList";
 import GoogleLoginForm from "../components/LogInComponents/GoogleLoginForm";
 import LogIn from "../components/LogInComponents/LogIn";
@@ -30,11 +31,15 @@ function PrivateRoutes() {
 
         <Link to ='/receipts' className="nav-item nav-link active">Show Receipts</Link> 
 
+        <Link to ='/bills' className="nav-item nav-link active">Show Bills</Link>
+
         <Link to ='/addingProvider' className="nav-item nav-link active">Add a new Product</Link>
 
         <Link to ='/addingReceipts' className="nav-item nav-link active">Add a new Receipt</Link>
 
-        <Link to ='/bills' className="nav-item nav-link active">Show Bills</Link>
+        <Link to ='/addingBills' className="nav-item nav-link active">Add a new Bill</Link>
+
+        
 
 </nav>
 
@@ -50,6 +55,7 @@ function PrivateRoutes() {
             <Route path="logInGoogle" element={<GoogleLoginForm/>}></Route>
             <Route path="/welcome" element={<WelcomePage/>}></Route>
             <Route path="/bills" element={<BillList/>}></Route>
+            <Route path="/addingBills" element={<BillForm/>}></Route>
             </Routes>
         </div>
     )

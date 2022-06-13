@@ -20,16 +20,16 @@ const BillList = () => {
         
   return (
     <div>
-      <h2>All of the receipts created</h2>
+      <h2>All of the bills created</h2>
     <ul>
          {billsSavedInStore.map((bill)=>
             <tr key={bill.id}>
                 <td>Date: {bill.date}</td>
                 <td> Client: {bill.client_name}</td>
                 <td> Clerk: {bill.clerk}</td>
-                <td> Product sold: {bill.productSold}</td>
+                <td> Product sold: {bill.productsSold}</td>
                 <td> Quantity:{bill.quantity}</td>
-                <td> Your charge:{bill.totalPaid}</td>
+                <td> Your charge:{bill.total_paid}</td>
             </tr>)}
             </ul>  
 
